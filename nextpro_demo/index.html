@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Video.js | HTML5 Video Player</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- Change URLs to wherever Video.js files will be hosted -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.2.2/video-js.css" rel="stylesheet">
+    <!-- video.js must be in the <head> for older IEs to work. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.2.2/video.js"></script>
+    <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+
+    <script>
+        videojs.options.flash.swf = "../dist/video-js.swf";
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/js/ajax.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js"></script>
+    <script src="/static/js/timeline_ajax.js"></script>
+</head>
+
+
+
+<body>
+    <nav class="navbar navbar-light" style="background-color: #80b9e2;">
+        <h4>Nextpro</h4>
+    </nav>
+
+    <!-- <div>
+            <p>
+                current time of player
+                <p id="current_time"></p>
+                <p>
+        </div> -->
+    <main class='main'>
+
+        <section class='left section'>
+
+            <video id="myvideo" class="video-js vjs-default-skin " controls preload=" true " autoplay=true width="600
+            " height="400 " poster=" " data-setup='{"techOrder ": ["flash "]}'>
+                <source src="https://storage.googleapis.com/www.touchstoneanalytics.ai/videos/nextpro-6-min.mp4" type='video/mp4' />
+            </video>
+        </section>
+        <section class='right section'>
+            <div id="timeline" style="border:1px solid black; font-family: robot,Arial,serif;height:400px;width: 610px; float: left;overflow-x:scroll; overflow-y:hidden; ">
+            </div>
+        </section>
+    </main>
+
+    <div id="timess" style="display: none;">
+        <h4>Players Timestamp</h4>
+        <ul id="time">
+        </ul>
+    </div>
+
+
+    </div>
+</body>
+<style>
+    body {
+        background: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 3%;
+        border: 0;
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    #ss h4 {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0;
+        padding: 10px 0 2px 15px;
+    }
+
+    #timess h4 {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0;
+        padding: 10px 0 2px 15px;
+    }
+
+    .p {
+        clear: both;
+        margin-bottom: 1em;
+        margin-top: 0;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section {
+        width: 50%;
+        height: 100%;
+    }
+
+
+    .vjs-texttrack-settings {
+        display: none;
+    }
+
+    .video-js .vjs-time-control {
+        display: block;
+    }
+
+    .video-js .vjs-remaining-time {
+        display: none;
+    }
+
+    #instructions {
+        max-width: 640px;
+        text-align: left;
+        margin: 30px auto;
+    }
+
+    #instructions textarea {
+        width: 100%;
+        height: 100px;
+    }
+
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+        display: block
+    }
+
+    .video-js {
+        margin: 20px auto;
+    }
+
+    a,
+    a:hover,
+    a:visited {
+        color: rgb(80, 170, 230);
+
+    }
+
+    .info {
+        background-color: 0;
+        border: 0;
+        border-radius: 3px;
+        padding: 3px;
+        text-align: center;
+        opacity: 0.5;
+    }
+
+    .videojs-background-wrap {
+        overflow: hidden;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -998;
+    }
+</style>
+
+</html>
